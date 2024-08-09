@@ -5,7 +5,17 @@ const mongoDB = require('./db');
 const path = require('path')
 mongoDB();
 app.use(express.json())
-
+const corsOptions = {
+    origin: "http://localhost:3000",
+    credentials: true,
+  };
+  app.use(cors(corsOptions));
+  // vercel wala cors
+  app.use(
+    cors({
+      origin: ["http://localhost:3000", "https://food-app-frontend-sigma.vercel.app"],
+    })
+  );
 app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     res.header(
