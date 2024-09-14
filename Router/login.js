@@ -10,8 +10,7 @@ const jwtSecret = "myNameisKhan";
 
 
 router.post("/loginUser",[
-    body('email').isEmail().withMessage('please Enter valid email'),
-    body('password', 'Incorrect password').isLength({min : 5})
+    body('email').isEmail().withMessage('please Enter valid email')
 
 ], async (req,res) => {
     const errors = validationResult(req);

@@ -11,9 +11,7 @@ const bcrypt = require('bcryptjs');
 
 
 router.post("/createuser",[
-    body('email').isEmail().withMessage('please Enter valid email'),
-    body('name').isLength({min : 5}),
-    body('password', 'Incorrect password').isLength({min : 5})
+    body('email').isEmail().withMessage('please Enter valid email')
 
 ]
 , async (req,res) =>{
