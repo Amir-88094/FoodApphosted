@@ -1,0 +1,12 @@
+On render, to again host click on Manual Deploy (Hit Deploy latest commit) 
+Your backend starting file name should be server.js
+Hit command npm run build .... a build will be created .... it is copy of your frontend part... if your frontend even be deleted ... your project will run by this build folder
+npm i cors ....   
+const corsOptions = {
+  origin: ["http://localhost:3000","https://foodapphosted-s6eq.onrender.com"],
+  credentials: true,
+};
+app.use(cors(corsOptions));
+
+
+proxy in front end  package.json .... "proxy":"http://localhost:5000" ...... (npm i proxy kar lena) ...... API CALL AB AISE KAR SAKTE HAIN .... `/api/createuser`
